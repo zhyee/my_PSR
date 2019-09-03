@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ruleset name="Octopus Standard Ruleset">
+
+    <description>A octopus php code standard ruleset</description>
+ 
+    <rule ref="./Standards/OSR0"/>
+ 
+</ruleset>

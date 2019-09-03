@@ -1,0 +1,10 @@
+{
+    "name": "jichupingtai/OSR",
+    "description": "2345编码规范",
+    "type": "library",
+    "autoload": {
+        "classmap": [
+            "Standards/OSR0/Sniffs/"
+        ]
+    }
+}

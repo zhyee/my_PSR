@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="Octopus Standard Ruleset 0">
+
+    <description>A octopus php code standard ruleset 0</description>
+
+    <exclude-pattern>*/ipdb/*</exclude-pattern>
+    <exclude-pattern>*/tpl_c/*</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+
+    <arg name="extensions" value="php,inc,conf,cae"/>
+    <!--
+    <arg name="report" value="summary"/>
+    <arg value="sp"/>
+    -->
+
+    <rule ref="Generic.PHP.DisallowShortOpenTag.Found">
+        <message>不允许使用短标签; 期望是 "&lt;?php" 而不是 "%s"</message>
+    </rule>
+    <rule ref="Generic.PHP.DisallowShortOpenTag.EchoFound">
+        <severity>0</severity>
+    </rule>
+
+    <rule ref="Squiz.Classes.ValidClassName.MissingBrace">
+        <message>可能语法错误: %s 缺少 "{" 或 "}"</message>
+    </rule>
+    <rule ref="Squiz.Classes.ValidClassName.NotCamelCaps">
+        <severity>0</severity>
+        <message>%s 命名为 "%s" 不是骆驼式写法</message>
+    </rule>
+
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="120"/>
+            <property name="absoluteLineLimit" value="0"/>
+        </properties>
+    </rule>
+    <rule ref="Generic.Files.LineLength.TooLong">
+        <severity>0</severity>
+        <message>一行推荐最多 %s 个字符; 实际包含 %s 个字符</message>
+    </rule>
+    <rule ref="Squiz.Arrays.ArrayDeclaration.SingleLineNotAllowed">
+        <severity>0</severity>
+    </rule>
+
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace">
+        <severity>0</severity>
+        <properties>
+            <property name="ignoreBlankLines" value="true"/>
+        </properties>
+    </rule>
+
+    <rule ref="OSR0.WhiteSpace.SuperfluousWhitespaceMore">
+        <properties>
+            <property name="ignoreBlankLines" value="true"/>
+        </properties>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.StartFile">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EndFile">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EmptyLines">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine">
+        <severity>0</severity>
+        <message>在行尾不允许空格</message>
+    </rule>
+    <rule ref="OSR0.WhiteSpace.SuperfluousWhitespaceMore.StartFile">
+        <severity>0</severity>
+    </rule>
+    <rule ref="OSR0.WhiteSpace.SuperfluousWhitespaceMore.EndFile">
+        <severity>0</severity>
+    </rule>
+    <rule ref="OSR0.WhiteSpace.SuperfluousWhitespaceMore.EmptyLines">
+        <severity>0</severity>
+    </rule>
+    <rule ref="OSR0.WhiteSpace.SuperfluousWhitespaceMore.EndLine">
+        <message>在行尾不允许空格</message>
+    </rule>
+    <rule ref="Generic.WhiteSpace.ScopeIndent">
+        <properties>
+            <property name="ignoreIndentationTokens" type="array" value="T_COMMENT,T_DOC_COMMENT_OPEN_TAG"/>
+        </properties>
+    </rule>
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent.TabsUsed">
+        <message>必须使用空格缩进; 不允许使用制表符</message>
+    </rule>
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent.NonIndentTabsUsed">
+        <message>必须使用空格对齐; 不允许使用制表符</message>
+    </rule>
+    <rule ref="Generic.WhiteSpace.ScopeIndent.IncorrectExact">
+        <message>行缩进不正确; 期望有 %s 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Generic.WhiteSpace.ScopeIndent.Incorrect">
+        <message>行缩进不正确; 期望至少有 %s 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Generic.PHP.LowerCaseKeyword.Found">
+        <message>PHP的关键字必须是小写; 期望是 "%s" 而不是 "%s"</message>
+    </rule>
+    <rule ref="Generic.PHP.LowerCaseConstant.Found">
+        <message>true, false 和 null 必须是小写; 期望是 "%s" 而不是 "%s"</message>
+    </rule>
+    <rule ref="Squiz.Scope.MethodScope.Missing">
+        <message>方法 "%s" 必须要有可见性声明</message>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.ScopeKeywordSpacing.Incorrect">
+        <message>可见性声明关键字 "%s" 后面必须有且只能有 1 个空格</message>
+    </rule>
+    <rule ref="Squiz.Functions.LowercaseFunctionKeywords.FoundUppercase">
+        <message>%s 关键字必须是小写; 期望是 "%s" 而不是 "%s"</message>
+    </rule>
+    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
+        <properties>
+            <property name="equalsSpacing" value="1"/>
+        </properties>
+    </rule>
+    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpaceBeforeEquals">
+        <message>"%s" 和 "=" 的间距不正确; 期望是 1 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpaceAfterDefault">
+        <message>"%s" 后面的 "=" 和 默认值 的间距不正确; 期望是 1 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpaceBeforeComma">
+        <message>"%s" 和后面的 "," 不能有空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingAfterHint">
+        <message>类型声明与 "%s" 之间必须有且只能有 1 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing.NoSpaceBeforeHint">
+        <message>"," 与 "%s" 之间必须有 1 个空格</message>
+    </rule>
+    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingBeforeHint">
+        <message>"," 与 "%s" 之间只能有 1 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing.NoSpaceBeforeArg">
+        <message>"," 与 "%s" 之间必须有 1 个空格</message>
+    </rule>
+    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingBeforeArg">
+        <message>"," 与 "%s" 之间只能有 1 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingAfterOpenHint">
+        <message>期望 %s 个空格在 "(" 和 "%s" 之间; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingAfterOpen">
+        <message>期望 %s 个空格在 "(" 和 "%s" 之间; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingBetween">
+        <message>期望在 "(" 和函数声明之间不能有空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingBeforeClose">
+        <message>期望 %s 个空格在 "%s或它的默认值" 和 ")" 之间; 而不是 %s</message>
+    </rule>
+    <rule ref="PEAR.Functions.ValidDefaultValue.NotAtEnd">
+        <message>带默认值的参数必须放在参数列表的最后</message>
+    </rule>
+    <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.OneParamPerLine">
+        <message>多行参数函数声明的每行必须有且只能有 1 个参数声明</message>
+    </rule>
+    <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.UseOneParamPerLine">
+        <message>多行参数使用声明的每行必须有且只能有 1 个参数声明</message>
+    </rule>
+    <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.SpaceAfterFunction">
+        <message>期望 1 个空格在 function 关键字后面; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.SpaceBeforeOpenParen">
+        <message>期望在 "(" 之前不能有空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.SpaceAfterUse">
+        <message>期望 1 个空格在 use 关键字后面; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.SpaceBeforeUse">
+        <message>期望 1 个空格在 use 关键字前面; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.CloseBracketLine">
+        <message>多行参数函数的 ")" 不能与参数在同一行</message>
+    </rule>
+    <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.UseCloseBracketLine">
+        <message>多行参数use的 ")" 不能与参数在同一行</message>
+    </rule>
+    <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.Indent">
+        <message>多行参数函数的缩进不正确; 期望是 %s 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.NewlineBeforeOpenBrace">
+        <message>多行参数函数的 ")" 和 "{" 必须在同一行</message>
+    </rule>
+    <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.SpaceBeforeOpenBrace">
+        <message>多行参数函数的 ")" 和 "{" 之间必须有且只能有 1 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine">
+        <message>"{" 必须在新的一行</message>
+    </rule>
+    <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnNewLine">
+        <message>"{" 必须和 function 在同一行</message>
+    </rule>
+    <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.ContentAfterBrace">
+        <message>"{" 必须是在行尾; 不能有空格</message>
+    </rule>
+    <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.SpaceAfterBracket">
+        <message>")" 后面必须有且只能有 1 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.BraceSpacing">
+        <message>"{" 必须在声明下一行; 而不是 %s 行</message>
+    </rule>
+    <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.BraceIndent">
+        <message>"{" 缩进不正确; 期望是 %s 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Generic.Functions.FunctionCallArgumentSpacing.SpaceBeforeComma">
+        <message>调用函数内的参数和 "," 间不能有空格</message>
+    </rule>
+    <rule ref="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma">
+        <message>调用函数内的 "," 和参数间必须有 1 个空格</message>
+    </rule>
+    <rule ref="Generic.Functions.FunctionCallArgumentSpacing.TooMuchSpaceAfterComma">
+        <message>调用函数内的 "," 和参数间只能有 1 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceBeforeEquals">
+        <message>默认值和 "=" 之间必须有且只能有 1 个空格</message>
+    </rule>
+    <rule ref="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterEquals">
+        <message>"=" 和默认值之间必须有且只能有 1 个空格</message>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.ControlStructureSpacing" />
+    <rule ref="Squiz.WhiteSpace.ControlStructureSpacing.SpacingAfterOpenBrace">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.ControlStructureSpacing.SpaceBeforeCloseBrace">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.ControlStructureSpacing.LineAfterClose">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.ControlStructureSpacing.NoLineAfterClose">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.ControlStructureSpacing.SpacingAfterOpen">
+        <message>控制结构开始第一行不能为空</message>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.ControlStructureSpacing.SpacingBeforeClose">
+        <message>控制结构结束前一行不能为空</message>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore">
+        <message>"}" 必须单独在一行</message>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.ScopeClosingBrace.Indent">
+        <message>"}" 缩进不正确; 期望是 %s 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.MissingOpenParenthesis">
+        <message>可能语法错误: 在关键字 foreach 后面没有 "("</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.MissingCloseParenthesis">
+        <message>可能语法错误: 在关键字 foreach 后面没有 ")"</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.SpaceAfterOpen">
+        <message>foreach循环 "(" 后面不能有空格</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.SpaceBeforeClose">
+        <message>foreach循环 ")" 前面不能有空格</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.MissingOpenParenthesis">
+        <message>可能语法错误: 在关键字 foreach 后面没有 "("</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.MissingAs">
+        <message>可能语法错误: 在关键字 foreach 后面没有 "as"</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.AsNotLower">
+        <message>关键字 as 必须是小写; 期望是 "%s"; 而不是 "%s"</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.NoSpaceBeforeArrow">
+        <message>期望在 "=>" 前面必须有 1 个空格</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.SpacingBeforeArrow">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.NoSpaceAfterArrow">
+        <message>期望在 "=>" 后面必须有 1 个空格</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.SpacingAfterArrow">
+        <message>期望在 "=>" 后面只能有 1 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.NoSpaceBeforeAs">
+        <message>期望在 "as" 前面必须有 1 个空格</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.SpacingBeforeAs">
+        <message>期望在 "as" 前面只能有 1 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.NoSpaceAfterAs">
+        <message>期望在 "as" 后面必须有 1 个空格</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.SpacingAfterAs">
+        <message>期望在 "as" 后面只能有 1 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForLoopDeclaration.NoOpenBracket">
+        <message>可能语法错误: 在关键字 for 后面没有 "("</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForLoopDeclaration.SpacingAfterOpen">
+        <message>for循环 "(" 后面不能有空格</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForLoopDeclaration.SpacingBeforeClose">
+        <message>for循环 ")" 前面不能有空格</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForLoopDeclaration.SpacingBeforeFirst">
+        <message>for循环第一个 ";" 前不能有空格</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForLoopDeclaration.NoSpaceAfterFirst">
+        <message>for循环第一个 ";" 后必须有 1 个空格</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForLoopDeclaration.SpacingAfterFirst">
+        <message>for循环第一个 ";" 后只能有 1 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForLoopDeclaration.SpacingBeforeSecond">
+        <message>for循环第二个 ";" 前不能有空格</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForLoopDeclaration.NoSpaceAfterSecond">
+        <message>for循环第二个 ";" 后必须有且只能有 1 个空格</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForLoopDeclaration.SpacingAfterSecondNoThird">
+        <message>for循环第二个 ";" 后没有语句不能有空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForLoopDeclaration.SpacingAfterSecond">
+        <message>for循环第二个 ";" 后必须有且只能有 1 个空格; 而不是 %s</message>
+    </rule>
+
+    <rule ref="PSR1.Methods.CamelCapsMethodName.NotCamelCaps">
+        <severity>0</severity>
+        <message>方法名 "%s" 不是驼峰式写法</message>
+    </rule>
+    <rule ref="PSR1.Methods.CamelCapsMethodName.MethodDoubleUnderscore">
+        <message>方法名 "%s" 不合法; 只有PHP魔术方法才使用 "__" 前缀</message>
+    </rule>
+    <rule ref="PSR1.Methods.CamelCapsMethodName.ScopeNotCamelCaps">
+        <severity>0</severity>
+        <message>%s 方法名 "%s" 不是驼峰式写法</message>
+    </rule>
+    <rule ref="PSR1.Methods.CamelCapsMethodName.FunctionDoubleUnderscore">
+        <message>函数名 "%s" 不合法; 只有PHP魔术方法才使用 "__" 前缀</message>
+    </rule>
+    <rule ref="PSR2.Classes.ClassDeclaration.SpaceBeforeKeyword">
+        <message>期望在 %s 和关键字 %s 之间必须有且只能有 1 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="PSR2.Classes.ClassDeclaration.NewlineBeforeKeyword">
+        <message>期望在 %s 和关键字 %s 之间必须有且只能有 1 个空格; 而不是换行</message>
+    </rule>
+    <rule ref="PSR2.Classes.ClassDeclaration.SpaceAfterKeyword">
+        <message>期望在关键字 %s 和 %s 名之间必须有且只能有 1 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="PSR2.Classes.ClassDeclaration.SpaceAfterName">
+        <message>期望在 %s 名后面必须有且只能有 1 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="PSR2.Classes.ClassDeclaration.ExtendsLine">
+        <message>关键字 extends 必须和 %s 名在同一行</message>
+    </rule>
+    <rule ref="PSR2.Classes.ClassDeclaration.ImplementsLine">
+        <message>关键字 implements 必须和 %s 名在同一行</message>
+    </rule>
+    <rule ref="PSR2.Classes.ClassDeclaration.SpaceBeforeExtends">
+        <message>期望在关键字 extends 前面必须有且只能有 1 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="PSR2.Classes.ClassDeclaration.SpaceBeforeImplements">
+        <message>期望在关键字 implements 前面必须有且只能有 1 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="PSR2.Classes.ClassDeclaration.FirstExtendsInterfaceSameLine">
+        <message>多行 extends 的第一个元素必须紧跟在关键字 extends 的后面第一行</message>
+    </rule>
+    <rule ref="PSR2.Classes.ClassDeclaration.FirstInterfaceSameLine">
+        <message>多行 implements 的第一个元素必须紧跟在关键字 implements 的后面第一行</message>
+    </rule>
+    <rule ref="PSR2.Classes.ClassDeclaration.ExtendsInterfaceSameLine">
+        <message>多行 extends 的时候每行只能指定一个接口</message>
+    </rule>
+    <rule ref="PSR2.Classes.ClassDeclaration.InterfaceSameLine">
+        <message>多行 implements 的时候每行只能指定一个接口</message>
+    </rule>
+    <rule ref="PSR2.Classes.ClassDeclaration.InterfaceWrongIndent">
+        <message>期望在接口名前面有 %s 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="PSR2.Classes.ClassDeclaration.NoSpaceBeforeName">
+        <message>期望在 "%s" 前面必须有 1 个空格</message>
+    </rule>
+    <rule ref="PSR2.Classes.ClassDeclaration.SpaceBeforeName">
+        <message>期望在 "%s" 前面只能有 1 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="PSR2.Classes.ClassDeclaration.SpaceBeforeComma">
+        <message>期望在 "%s" 和 "," 之间没有空格; 而不是 %s</message>
+    </rule>
+    <rule ref="PSR2.Classes.ClassDeclaration.CloseBraceAfterBody">
+        <severity>0</severity>
+    </rule>
+    <rule ref="PSR2.Classes.ClassDeclaration.CloseBraceSameLine">
+        <message>%s 的 "}" 必须单独在一行</message>
+    </rule>
+    <rule ref="PSR2.Classes.ClassDeclaration.MissingBrace">
+        <message>可能语法错误: %s 缺少 "{" 或 "}"</message>
+    </rule>
+    <rule ref="PSR2.Classes.ClassDeclaration.OpenBraceNewLine">
+        <message>%s 的 "{" 必须在紧跟着声明的下一行</message>
+    </rule>
+    <rule ref="PSR2.Classes.ClassDeclaration.OpenBraceWrongLine">
+        <message>%s 的 "{" 必须在紧跟着 %s 声明的下一行; 而不是 %s 行</message>
+    </rule>
+    <rule ref="PSR2.Classes.ClassDeclaration.OpenBraceNotAlone">
+        <message>%s 的 "{" 必须单独在一行</message>
+    </rule>
+    <rule ref="PSR2.Classes.ClassDeclaration.SpaceBeforeBrace">
+        <message>期望在 "{" 前有 %s 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="PSR2.Classes.PropertyDeclaration.Underscore">
+        <severity>0</severity>
+        <message>属性名 "%s" 不应以下划线 "_" 来标明可见性</message>
+    </rule>
+    <rule ref="PSR2.Classes.PropertyDeclaration.VarUsed">
+        <message>不能用关键字 var 来声明属性</message>
+    </rule>
+    <rule ref="PSR2.Classes.PropertyDeclaration.Multiple">
+        <message>一次只能声明一个属性</message>
+    </rule>
+    <rule ref="PSR2.Classes.PropertyDeclaration.ScopeMissing">
+        <message>属性 "%s" 必须要有可见性声明</message>
+    </rule>
+    <rule ref="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed">
+        <message>不建议使用 "else if" ; 建议使用 "elseif"</message>
+    </rule>
+    <rule ref="PSR2.ControlStructures.SwitchDeclaration.defaultNotLower">
+        <severity>0</severity>
+    </rule>
+    <rule ref="PSR2.ControlStructures.SwitchDeclaration.caseNotLower">
+        <severity>0</severity>
+    </rule>
+    <rule ref="PSR2.ControlStructures.SwitchDeclaration.SpacingAfterCase">
+        <message>关键字 case 后面必须有且只能有 1 个空格</message>
+    </rule>
+    <rule ref="PSR2.ControlStructures.SwitchDeclaration.SpaceBeforeColonDEFAULT">
+        <message>default 声明语句的 ":" 前不能有空格</message>
+    </rule>
+    <rule ref="PSR2.ControlStructures.SwitchDeclaration.SpaceBeforeColonCASE">
+        <message>case 声明语句的 ":" 前不能有空格</message>
+    </rule>
+    <rule ref="PSR2.ControlStructures.SwitchDeclaration.BodyOnNextLineDEFAULT">
+        <message>default 的代码区块必须在紧跟着声明的下一行</message>
+    </rule>
+    <rule ref="PSR2.ControlStructures.SwitchDeclaration.BodyOnNextLineCASE">
+        <message>case 的代码区块必须在紧跟着声明的下一行</message>
+    </rule>
+    <rule ref="PSR2.ControlStructures.SwitchDeclaration.BreakNotNewLine">
+        <message>break 必须单独在一行</message>
+    </rule>
+    <rule ref="PSR2.ControlStructures.SwitchDeclaration.BreakIndent">
+        <message>break 必须和代码区块的缩进一致</message>
+    </rule>
+    <rule ref="PSR2.ControlStructures.SwitchDeclaration.WrongOpenerdefault">
+        <message>可能语法错误: default 声明后面必须使用 ":"</message>
+    </rule>
+    <rule ref="PSR2.ControlStructures.SwitchDeclaration.WrongOpenercase">
+        <message>可能语法错误: case 声明后面必须使用 ":"</message>
+    </rule>
+    <rule ref="PSR2.ControlStructures.SwitchDeclaration.TerminatingComment">
+        <message>多个 case 透穿时; 起始的 case 代码区块的最后一行必须要有注释说明</message>
+    </rule>
+    <rule ref="PSR2.Files.ClosingTag.NotAllowed">
+        <message>纯PHP代码文件不允许使用 "?&gt;" 结尾</message>
+    </rule>
+    <rule ref="PSR2.Files.EndFileNewline.NoneFound">
+        <message>期望在文件末尾必须有1 个空行</message>
+    </rule>
+    <rule ref="PSR2.Files.EndFileNewline.TooMany">
+        <message>期望在文件末尾只能有 1 个空行; 而不是 %s</message>
+    </rule>
+    <rule ref="PSR2.Methods.FunctionCallSignature.SpaceBeforeOpenBracket">
+        <message>禁止在调用函数的 "(" 前出现空格</message>
+    </rule>
+    <rule ref="PSR2.Methods.FunctionCallSignature.SpaceAfterCloseBracket">
+        <message>禁止在调用函数的 ")" 后出现空格</message>
+    </rule>
+    <rule ref="PSR2.Methods.FunctionCallSignature.SpaceAfterOpenBracket">
+        <message>禁止在调用函数的 "(" 后出现空格</message>
+    </rule>
+    <rule ref="PSR2.Methods.FunctionCallSignature.SpaceBeforeCloseBracket">
+        <message>期望 %s 个空格在 ")" 前; 而不是 %s</message>
+    </rule>
+    <rule ref="PSR2.Methods.FunctionCallSignature.ContentAfterOpenBracket">
+        <message>多行参数函数执行时 "(" 必须在这行的最后面</message>
+    </rule>
+    <rule ref="PSR2.Methods.FunctionCallSignature.CloseBracketLine">
+        <message>多行参数函数执行时 ")" 不能与参数在同一行</message>
+    </rule>
+    <rule ref="PSR2.Methods.FunctionCallSignature.EmptyLine">
+        <message>多行参数函数执行时参数行不能出现空行</message>
+    </rule>
+    <rule ref="PSR2.Methods.FunctionCallSignature.Indent">
+        <message>多行参数函数执行时缩进不正确; 期望是 %s 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="PSR2.Methods.FunctionCallSignature.MultipleArguments">
+        <message>多行参数函数执行时每行有且只能出现 1 个参数</message>
+    </rule>
+    <rule ref="PSR2.Methods.FunctionClosingBrace.SpacingBeforeClose">
+        <message>函数的 "}" 必须在紧跟着代码区块的下一行; 而不是在 "}" 前有 %s 空行</message>
+    </rule>
+    <rule ref="PSR2.Methods.MethodDeclaration.Underscore">
+        <message>方法名 "%s" 不应以下划线 "_" 来标明可见性</message>
+    </rule>
+    <rule ref="PSR2.Methods.MethodDeclaration.FinalAfterVisibility">
+        <message>final 声明必须先于可见性声明</message>
+    </rule>
+    <rule ref="PSR2.Methods.MethodDeclaration.AbstractAfterVisibility">
+        <message>abstract 声明必须先于可见性声明</message>
+    </rule>
+    <rule ref="PSR2.Methods.MethodDeclaration.StaticBeforeVisibility">
+        <message>static 声明必须后于可见性声明</message>
+    </rule>
+    <rule ref="PSR2.Namespaces.NamespaceDeclaration.BlankLineAfter">
+        <message>在 namespace 声明后面必须有且只能有 1 个空行</message>
+    </rule>
+    <rule ref="PSR2.Namespaces.UseDeclaration.SpaceAfterUse">
+        <message>在关键字 use 后面必须有且只能有 1 个空格</message>
+    </rule>
+    <rule ref="PSR2.Namespaces.UseDeclaration.MultipleDeclarations">
+        <message>一个 use 关键字只能声明一个引用</message>
+    </rule>
+    <rule ref="PSR2.Namespaces.UseDeclaration.UseAfterNamespace">
+        <message>use 声明必须在第一个 namespace 声明后面</message>
+    </rule>
+    <rule ref="PSR2.Namespaces.UseDeclaration.SpaceAfterLastUse">
+        <message>最后一个 use 声明下面必须有 1 个空行; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing.NoSpaceBefore">
+        <message>在逻辑操作符前面必须有 1 个空格</message>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing.TooMuchSpaceBefore">
+        <message>在逻辑操作符前面只能有 1 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing.NoSpaceAfter">
+        <message>在逻辑操作符后面必须有 1 个空格</message>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing.TooMuchSpaceAfter">
+        <message>在逻辑操作符后面只能有 1 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.ObjectOperatorSpacing">
+        <properties>
+            <property name="ignoreNewlines" value="true"/>
+        </properties>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.ObjectOperatorSpacing.Before">
+        <message>在对象操作符 "->" 前面不能有空格</message>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.ObjectOperatorSpacing.After">
+        <message>在对象操作符 "->" 后面不能有空格</message>
+    </rule>
+    <rule ref="Generic.Formatting.DisallowMultipleStatements.SameLine">
+        <message>每个PHP语句必须单独在一行</message>
+    </rule>
+    <rule ref="Generic.ControlStructures.InlineControlStructure.NotAllowed">
+        <message>禁止使用行内控制结构; 控制结构必须有括号和换行</message>
+    </rule>
+    <rule ref="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase">
+        <message>常量必须是大写字母和下划线组成; 应该是 %s; 而不是 %s</message>
+    </rule>
+    <rule ref="Generic.NamingConventions.UpperCaseConstantName.ClassConstantNotUpperCase">
+        <message>类的常量必须是大写字母和下划线组成; 应该是 %s; 而不是 %s</message>
+    </rule>
+    <rule ref="PEAR.Commenting.FunctionComment.Missing">
+        <message>函数缺少注释</message>
+    </rule>
+    <rule ref="PEAR.Commenting.FunctionComment.WrongStyle">
+        <message>函数注释必须使用 "/**" 风格</message>
+    </rule>
+    <rule ref="PEAR.Commenting.FunctionComment.SpacingAfter">
+        <message>函数注释后不能有空行</message>
+    </rule>
+    <rule ref="PEAR.Commenting.FunctionComment.EmptySees">
+        <message>在函数的注释里少了 @see 标签的内容</message>
+    </rule>
+    <rule ref="PEAR.Commenting.FunctionComment.DuplicateReturn">
+        <message>在函数的注释里最多只允许 1 个 @return 标签</message>
+    </rule>
+    <rule ref="PEAR.Commenting.FunctionComment.MissingReturnType">
+        <message>在函数的注释里 @return 标签少了类型</message>
+    </rule>
+    <rule ref="PEAR.Commenting.FunctionComment.MissingReturn">
+        <message>在函数的注释里少了 @return 标签</message>
+    </rule>
+    <rule ref="PEAR.Commenting.FunctionComment.InvalidThrows">
+        <message>在函数的注释里少了 @throws 标签</message>
+    </rule>
+    <rule ref="PEAR.Commenting.FunctionComment.MissingParamComment">
+        <message>缺少参数注释</message>
+    </rule>
+    <rule ref="PEAR.Commenting.FunctionComment.MissingParamName">
+        <message>缺少参数名</message>
+    </rule>
+    <rule ref="PEAR.Commenting.FunctionComment.MissingParamType">
+        <message>缺少参数类型</message>
+    </rule>
+    <rule ref="PEAR.Commenting.FunctionComment.SpacingAfterParamType">
+        <severity>0</severity>
+    </rule>
+    <rule ref="PEAR.Commenting.FunctionComment.ParamNameNoMatch">
+        <message>参数的注释 %s 不匹配实际的变量名 %s</message>
+    </rule>
+    <rule ref="PEAR.Commenting.FunctionComment.ParamNameNoCaseMatch">
+        <message>参数的注释 %s 大小写不匹配实际的变量名 %s</message>
+    </rule>
+    <rule ref="PEAR.Commenting.FunctionComment.ExtraParamComment">
+        <message>有多余的参数注释</message>
+    </rule>
+    <rule ref="PEAR.Commenting.FunctionComment.SpacingAfterParamName">
+        <severity>0</severity>
+    </rule>
+    <rule ref="PEAR.Commenting.FunctionComment.MissingParamTag">
+        <message>缺少参数 "%s" 的注释</message>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace.SpacingAfter">
+        <message>在函数的 "{" 后面不能有空行; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.Arrays.ArrayDeclaration.NotLowerCase">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.Arrays.ArrayDeclaration.SpaceAfterKeyword">
+        <message>关键字 "array" 和 "(" 之间不能有空格</message>
+    </rule>
+    <rule ref="Squiz.Arrays.ArrayDeclaration.SpaceInEmptyArray">
+        <message>空数组声明的 "()" 里不能有空格</message>
+    </rule>
+
+    <rule ref="Squiz.Arrays.ArrayDeclaration.CommaAfterLast">
+        <severity>0</severity>
+        <message>在单行数组声明里最后一个值后面不能有 ","</message>
+    </rule>
+
+    <rule ref="Squiz.Arrays.ArrayDeclaration.NoSpaceBeforeDoubleArrow">
+        <message>在 "%s" 和 "=>" 之间必须有 1 个空格</message>
+    </rule>
+
+    <rule ref="Squiz.Arrays.ArrayDeclaration.SpaceBeforeDoubleArrow">
+        <severity>0</severity>
+        <message>在 "%s" 和 "=>" 之间只能有 1 个空格; 而不是 %s</message>
+    </rule>
+
+    <rule ref="Squiz.Arrays.ArrayDeclaration.NoSpaceAfterDoubleArrow">
+        <message>在 "=>" 和 "%s" 之间必须有 1 个空格</message>
+    </rule>
+
+    <rule ref="Squiz.Arrays.ArrayDeclaration.SpaceAfterDoubleArrow">
+        <severity>0</severity>
+        <message>在 "=>" 和 "%s" 之间只能有 1 个空格; 而不是 %s</message>
+    </rule>
+
+    <rule ref="Squiz.Arrays.ArrayDeclaration.NoSpaceAfterComma">
+        <message>在 "," 和 "%s" 之间必须有 1 个空格</message>
+    </rule>
+    <rule ref="Squiz.Arrays.ArrayDeclaration.SpaceAfterComma">
+        <message>在 "," 和 "%s" 之间只能有 1 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.Arrays.ArrayDeclaration.SpaceBeforeComma">
+        <message>在 "%s" 和 "," 之间不能有空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.Arrays.ArrayDeclaration.CloseBraceNewLine">
+        <message>数组声明时 ")" 必须单独在一行</message>
+    </rule>
+    <rule ref="Squiz.Arrays.ArrayDeclaration.CloseBraceNotAligned">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.Arrays.ArrayDeclaration.NoKeySpecified">
+        <message>数组里有条目没指定键; 而第一个条目却指定了键</message>
+    </rule>
+    <rule ref="Squiz.Arrays.ArrayDeclaration.SpaceBeforeComma">
+        <message>在 "%s" 和 "," 之间不能有空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.Arrays.ArrayDeclaration.KeySpecified">
+        <message>数组里有条目指定了键; 而第一个条目却没指定键</message>
+    </rule>
+    <rule ref="OSR0.WhiteSpace.OperatorSpacing.SpacingBefore">
+        <message>在操作符 "%s" 前必须有且只能有 1 个空格; 而不是 %s</message>
+    </rule>
+    <rule ref="Squiz.Arrays.ArrayDeclaration.NoCommaAfterLast">
+        <message>在数组里最后一个值的后面必须有 ","</message>
+    </rule>
+
+    <rule ref="Squiz.Arrays.ArrayDeclaration.ValueNoNewline">
+        <message>在多行数组里每个值必须单独在一行</message>
+    </rule>
+    <rule ref="Squiz.Arrays.ArrayDeclaration.ValueNotAligned">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.Arrays.ArrayDeclaration.FirstValueNoNewline">
+        <message>在多行数组里第一个值必须单独在一行</message>
+    </rule>
+    <rule ref="Squiz.Arrays.ArrayDeclaration.FirstIndexNoNewline">
+        <message>在多行数组里第一个索引必须单独在一行</message>
+    </rule>
+    <rule ref="Squiz.Arrays.ArrayDeclaration.IndexNoNewline">
+        <message>在多行数组里每个索引必须单独在一行</message>
+    </rule>
+    <rule ref="Squiz.Arrays.ArrayDeclaration.KeyNotAligned">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.Arrays.ArrayDeclaration.DoubleArrowNotAligned">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.Arrays.ArrayDeclaration.ValueNotAligned">
+        <severity>0</severity>
+    </rule>
+
+    <rule ref="Squiz.Arrays.ArrayDeclaration.NoComma">
+        <severity>0</severity>
+        <message>数组声明的每行末尾必须要有 ","</message>
+    </rule>
+
+    <rule ref="Squiz.Arrays.ArrayDeclaration.SpaceBeforeComma">
+        <message>在 "%s" 和 "," 之间不能有空格; 而不是 %s</message>
+    </rule>
+
+</ruleset>
